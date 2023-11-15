@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Age</th>
+      <th>Sexe</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (parent of personnes; track parent.nom) {
+      <tr (click)="selectParent(parent)" [class.selectionne]="parent == selectedParent">
+        <td>{{parent.nom}}</td>
+        <td>{{parent.prenom}}</td>
+        <td>{{parent.age}}</td>
+        <td>{{parent.sexe}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@if (selectedParent) {
+  <app-enfant [enfants]="selectedParent.enfants"></app-enfant>
+}
+

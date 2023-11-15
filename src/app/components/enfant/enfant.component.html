@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Age</th>
+      <th>Sexe</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (enfant of enfants; track enfant.prenom) {
+      <tr>
+        <td>{{enfant.nom}}</td>
+        <td>{{enfant.prenom}}</td>
+        <td>{{enfant.age}}</td>
+        <td>{{enfant.sexe}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
