@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     @for (enfant of enfants; track enfant.prenom) {
-      <tr>
+      <tr (click)="selectEnfant(enfant)">
         <td>{{enfant.nom}}</td>
         <td>{{enfant.prenom}}</td>
         <td>{{enfant.age}}</td>
@@ -18,3 +18,10 @@
     }
   </tbody>
 </table>
+
+@if(selectedEnfant) {
+  <app-edit 
+    [enfant]="selectedEnfant"
+    (save)="sauvegardeEnfant($event)">
+  </app-edit>
+}

@@ -1,0 +1,8 @@
+@if(enfantEdition) {
+  <div>Nom: <input type="text" [(ngModel)]="enfantEdition.nom" /></div>
+  <div>Prenom: <input type="text"  [(ngModel)]="enfantEdition.prenom"/></div>
+  <div>Age: <input type="number"  [(ngModel)]="enfantEdition.age"/></div>
+  <div>
+    <button (click)="saveAction()">Enregistrer</button>
+  </div>
+}
